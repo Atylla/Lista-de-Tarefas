@@ -1,4 +1,10 @@
+/* ------------------------------------------------------------------------------------ Tags */
+html {
+    height: 100%;
+}
 body {
+    
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: #FAFAFA;
@@ -8,12 +14,14 @@ body {
 
 header {
     box-sizing: border-box;
-    background-color: #FAFAFA;
+    background-color: #fff;
     height: 100px;
     padding: 17px;
+    display: flex;
     align-items: center;
     border: 1px solid #E0E0E0;
-    border-radius: 16px;
+    border-top: none;
+    border-radius: 0 0 16px 16px
 }
 
 h1 {
@@ -33,10 +41,27 @@ h3 {
     font-size: 16px;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ------------------------------------------------------------------------------------ Section1 */
 .sessao1 {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
 }
+
+/* ------------------------------------------------------------------------------------ coluna 1 */
 
 .criar {
     margin-top: 10px;
@@ -44,17 +69,6 @@ h3 {
     border-radius: 16px;
     height: 700px;
     padding: 10px;
-}
-
-.criar--descricao {
-    width: 100%;
-    min-height: 100px;
-    resize: vertical;
-    font-size: 1rem;
-    padding: 8px;
-    border-radius: 16px;
-    border: 1px solid #E0E0E0;
-    box-sizing: border-box;
 }
 
 .newList {
@@ -67,25 +81,38 @@ h3 {
     padding-left: 10px;
 }
 
-.lists {
-    background-color: #FAFAFA;
-    margin-top: 10px;
-    border: 1px solid #E0E0E0;
-    border-radius: 16px;
-    padding: 12px;
-    display: block;
+.botaoNewList {
+    color: #4A90E2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.progresso {
-    margin-top: 10px;
-    border-radius: 16px;
-    border: 1px solid #E0E0E0;
-    background-color: #FAFAFA;
+.listas--criadas {
+    margin-top: 1rem;
+    border-top: 1px solid #ccc;
+    padding-top: 0.5rem;
 }
 
+.item-painel {
+    cursor: pointer;
+    padding: 5px 10px;
+    background: #FAFAFA;
+    margin-bottom: 5px;
+    border-radius: 16px;
+    border-bottom: 1px solid #E0E0E0;
+    transition: background 0.2s;
+}
+
+.item-painel:hover {
+    background: #ddd;
+}
+
+/* ------------------------------------------------------------------------------------ coluna 2 */
 .contador {
     height: 15px;
     border-radius: 16px;
+    background-color: #FAFAFA;
     background-color: #7ED321;
     transition: width 0.3s ease;
     width: 0;
@@ -100,11 +127,27 @@ h3 {
 
 }
 
+.lists {
+    background-color: #FAFAFA;
+    margin-top: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+    padding: 12px;
+    display: block;
+}
+
 .list--header {
     display: flex;
+    height: 40px;
     justify-content: space-between;
-    flex-direction: row;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.tarefa--criar {
+    color: #4A90E2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .tarefa {
@@ -131,24 +174,6 @@ h3 {
     background-color: #ddd;
 }
 
-.lista--excluir {
-    cursor: pointer;
-    color: red;
-    margin-right: 5px;
-    background-color: transparent;
-    border-color: transparent;
-    font-size: 20px;
-}
-
-.botaoNewList,
-.tarefa--criar {
-    color: #4A90E2;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-
-}
-
 .tarefa--selecionar,
 .tarefa--excluir {
     margin-right: 5px;
@@ -159,8 +184,41 @@ h3 {
 }
 
 .tarefa--nome {
+    color: #444;
+    font-weight: bold;
     margin-right: 5px;
     width: 95%;
+}
+
+.nome--lista {
+    padding: 0;
+    margin: 5px 0 0 20px;
+    font-size: 20px;
+}
+
+.lista--concluir {
+    color: #4A90E2;
+    margin-right: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.list--footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.lista--excluir {
+    cursor: pointer;
+    color: red;
+    margin-right: 5px;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 20px;
 }
 
 .concluida {
@@ -168,6 +226,47 @@ h3 {
     opacity: 0.6;
 }
 
+/* ------------------------------------------------------------------------------------ coluna 3 */
+.progresso {
+    margin-top: 10px;
+    border-radius: 16px;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    background-color: #FAFAFA;
+}
+
+.limpar-progresso {
+    color: #4A90E2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.lista-concluidas {
+    margin-left: 15px;
+}
+
+.concluida {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* ------------------------------------------------------------------------------------ Modal */
+.criar--nome {
+    border-radius: 16px;
+    border: 1px solid #E0E0E0;
+}
+
+.criar--descricao {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+    font-size: 1rem;
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+}
 
 .modal {
     display: none;
@@ -203,34 +302,85 @@ h3 {
     color: #000;
 }
 
-.listas--criadas {
-    margin-top: 1rem;
-    border-top: 1px solid #ccc;
-    padding-top: 0.5rem;
-}
-
-.item-painel {
-    cursor: pointer;
-    padding: 5px 10px;
-    background: #FAFAFA;
-    margin-bottom: 5px;
-    border-radius: 16px;
-    border-bottom: 1px solid #E0E0E0;
-    transition: background 0.2s;
-}
-
-.item-painel:hover {
-    background: #ddd;
-}
-
+/* ------------------------------------------------------------------------------------ Cor da tarefa por prioridade */
 .itemLista.alta {
-    background-color: #ffbebe;
+    background-color: #D67E7E;
 }
 
 .itemLista.media {
-    background-color: #fffce2;
+    background-color: #F2CC8F;
 }
 
 .itemLista.baixa {
-    background-color: #e0ffe0;
+    background-color: #A3B18A;
+}
+
+/* ------------------------------------------------------------------------------------ Input range para prioridade da tarefa */
+input[type="range"].criar--prioridade {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #A3B18A, #F2CC8F, #D67E7E);
+    border-radius: 3px;
+    outline: none;
+    margin: 10px 0;
+}
+
+/* ------------------------------------------------------------------------------------ Barra */
+input[type="range"].criar--prioridade::-webkit-slider-runnable-track {
+    height: 6px;
+    background: transparent;
+    border-radius: 3px;
+}
+
+input[type="range"].criar--prioridade::-moz-range-track {
+    height: 6px;
+    background: transparent;
+    border-radius: 3px;
+}
+
+/* ------------------------------------------------------------------------------------ Bola */
+input[type="range"].criar--prioridade::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #333;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-top: -6px;
+}
+
+input[type="range"].criar--prioridade::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #333;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .sessao1 {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .criar {
+        margin-top: 10px;
+        border: 1px solid #E0E0E0;
+        border-radius: 16px;
+        min-height: 150px;
+        max-height: 200px;
+        padding: 10px;
+        overflow-wrap: break-word;
+    }
+
+    .listas--criadas {
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-wrap: break-word;
+    }
 }
