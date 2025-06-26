@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    color: #333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+header {
+    box-sizing: border-box;
+    background-color: #FAFAFA;
+    height: 100px;
+    padding: 17px;
+    align-items: center;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+}
+
+h1 {
+    margin: 0;
+
+}
+
+h2 {
+    margin: 0;
+    margin-left: 20px;
+    color: #555555;
+
+}
+
+h3 {
+    margin: 0 0 8px 8;
+    font-size: 16px;
+}
+
+.sessao1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.criar {
+    margin-top: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+    height: 700px;
+    padding: 10px;
+}
+
+.criar--descricao {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+    font-size: 1rem;
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+}
+
+.newList {
+    width: 70%;
+    margin-left: 8px;
+    margin-top: 10px;
+    height: 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+    padding-left: 10px;
+}
+
+.lists {
+    background-color: #FAFAFA;
+    margin-top: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+    padding: 12px;
+    display: block;
+}
+
+.progresso {
+    margin-top: 10px;
+    border-radius: 16px;
+    border: 1px solid #E0E0E0;
+    background-color: #FAFAFA;
+}
+
+.contador {
+    height: 15px;
+    border-radius: 16px;
+    background-color: #7ED321;
+    transition: width 0.3s ease;
+    width: 0;
+}
+
+.list {
+    background-color: #FFFFFF;
+    margin: 0 auto 15px auto;
+    border: 1px solid #E0E0E0;
+    padding: 12px;
+    border-radius: 16px;
+
+}
+
+.list--header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.tarefa {
+    width: 80%;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.itemLista {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    width: 100%;
+    height: 14px;
+    padding: 5px;
+    border-bottom: 1px solid #E0E0E0;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.itemLista:hover {
+    background-color: #ddd;
+}
+
+.lista--excluir {
+    cursor: pointer;
+    color: red;
+    margin-right: 5px;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 20px;
+}
+
+.botaoNewList,
+.tarefa--criar {
+    color: #4A90E2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+.tarefa--selecionar,
+.tarefa--excluir {
+    margin-right: 5px;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: red;
+}
+
+.tarefa--nome {
+    margin-right: 5px;
+    width: 95%;
+}
+
+.concluida {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-conteudo {
+    background-color: #FAFAFA;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 16px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.fechar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar:hover {
+    color: #000;
+}
+
+.listas--criadas {
+    margin-top: 1rem;
+    border-top: 1px solid #ccc;
+    padding-top: 0.5rem;
+}
+
+.item-painel {
+    cursor: pointer;
+    padding: 5px 10px;
+    background: #FAFAFA;
+    margin-bottom: 5px;
+    border-radius: 16px;
+    border-bottom: 1px solid #E0E0E0;
+    transition: background 0.2s;
+}
+
+.item-painel:hover {
+    background: #ddd;
+}
+
+.itemLista.alta {
+    background-color: #ffbebe;
+}
+
+.itemLista.media {
+    background-color: #fffce2;
+}
+
+.itemLista.baixa {
+    background-color: #e0ffe0;
+}
